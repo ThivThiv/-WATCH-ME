@@ -1,0 +1,9 @@
+<div class="cards">
+  <% @watches.each do |watch| %>
+    <%= link_to watch_path(watch), :action => 'go' do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= watch.photo.attached? ? cl_image_path(list.photo.key, crop: :fill) : image_path("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80", width: 400, height: 300, crop: :fill) %>')">
+        <h2><%= watch.name %></h2>
+      </div>
+    <% end %>
+  <% end %>
+</div>
