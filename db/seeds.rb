@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'open-uri'
+require 'json'
+
+puts 'Creating new watch database...'
+
+Watch.create!(
+  name: "Rolex",
+  description: "Daytona or",
+  price: 500
+)
+
+Watch.create!(
+  name: "Omega",
+  description: "Seamaster",
+  price: 300
+)
+
+Watch.create!(
+  name: "Patek Philippe",
+  description: "Nautilus",
+  price: 500
+)
+
+puts 'New database created!'
