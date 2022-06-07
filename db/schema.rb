@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_06_154032) do
+ActiveRecord::Schema.define(version: 2022_06_07_092150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,12 +67,13 @@ ActiveRecord::Schema.define(version: 2022_06_06_154032) do
   end
 
   create_table "watches", force: :cascade do |t|
-    t.string "name"
+    t.string "model"
     t.text "description"
     t.integer "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "brand"
     t.index ["user_id"], name: "index_watches_on_user_id"
   end
 
