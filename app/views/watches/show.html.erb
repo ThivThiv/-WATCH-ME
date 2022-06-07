@@ -1,0 +1,15 @@
+<div class="container">
+  <h2><%= @watch.brand %></h2>
+  <h2><%= @watch.model %></h2>
+  <p><%= @watch.description %></p>
+  <p><%= @watch.price %></p>
+  <p><%= @watch.user_id %></p>
+</div>
+
+<div class = container>
+  <%= simple_form_for [@watch, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Submit list", class: "btn btn-primary" %>
+  <% end %>
+</div>
