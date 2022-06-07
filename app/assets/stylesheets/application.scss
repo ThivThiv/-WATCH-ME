@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/dist/themes/airbnb";
+@import "components/card-watch-show";
+
+h1 {
+  // font: $headers-font;
+  font-size: 24px;
+}
+
+p {
+  // font:$body-font;
+  font-size: 16px;
+}
