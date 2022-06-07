@@ -4,3 +4,64 @@
   grid-gap: 16px;
   padding: 16px;
 }
+
+// Importé depuis l'UI KIT du Wagon
+.card-category {
+  background-size: cover;
+  background-position: 45% 60%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// Importé depuis l'UI KIT du Wagon
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+// Importé depuis l'UI KIT du Wagon
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+// Importé depuis l'UI KIT du Wagon
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+// Importé depuis l'UI KIT du Wagon
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+// Importé depuis l'UI KIT du Wagon
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
