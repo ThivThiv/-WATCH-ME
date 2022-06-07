@@ -1,12 +1,11 @@
 class WatchesController < ApplicationController
   def index
-    @watches= Watch.all
+    @watches = Watch.all
   end
 
   def show
     @watch = Watch.find(params[:id])
     @booking = Booking.new
-    @user = User.new
   end
 
   def new
