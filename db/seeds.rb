@@ -15,22 +15,25 @@ puts 'Creating new watch database...'
 user1 = User.create(email: "titi@gmail.com", password: "password")
 
 Watch.create(
-  name: "Rolex",
-  description: "Daytona or",
+  brand: "Rolex",
+  model: "Daytona Or",
+  description: "Montre en or qui claque sa mère",
   price: 500,
   user: user1
 )
 
 Watch.create(
-  name: "Omega",
-  description: "Seamaster",
+  brand: "Omega",
+  model: "Seamaster",
+  description: "La marque de James Bond",
   price: 300,
   user: user1
 )
 
 Watch.create(
-  name: "Patek Philippe",
-  description: "Nautilus",
+  brand: "Patek Philippe",
+  model: "Nautilus",
+  description: "Tu achètes cette montre, tu mangeras que de l'eau",
   price: 500,
   user: user1
 )
