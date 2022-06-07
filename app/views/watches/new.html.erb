@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    <h1> Add a new watch</h1>
+  </div>
+
+  <div>
+    <%= simple_form_for @watch do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
