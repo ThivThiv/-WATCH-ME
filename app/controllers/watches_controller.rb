@@ -17,7 +17,7 @@ class WatchesController < ApplicationController
     @watch = Watch.new(watch_params)
 
     if @watch.save
-      redirect_to @watch, notice: 'Votre montre est ajoutée !'
+      redirect_to watch_path(@watch), notice: 'Votre montre est ajoutée !'
     else
       render :new
     end
