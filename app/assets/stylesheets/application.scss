@@ -11,6 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/dist/themes/airbnb";
 @import "components/banner";
 @import "components/cardtrip";
 @import "components/cards";
