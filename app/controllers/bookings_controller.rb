@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def create
@@ -14,8 +15,9 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to watch_booking_path(@watch, @booking)
     else
-      render :new
+      render :show
     end
+    authorize @booking
   end
 
   private
