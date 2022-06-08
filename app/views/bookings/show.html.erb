@@ -1,1 +1,24 @@
-<h1> Thanks for your order</h1>
+
+
+<div class="container">
+  <div class="card-watch">
+    <h1 class="text-center mt-3"> Thanks for your order</h1>
+    <div class="card-watch-trip">
+      <%= @watch.photo.attached? ? cl_image_tag(@watch.photo.key, height: 480, width: 390, crop: :fill) : image_path("https://picsum.photos/390/480", width: 390, height: 480, crop: :fill)%>
+    </div>
+    <div class= "card-watch-infos-details">
+      <div class="card-watch-infos">
+        <h3><%= @watch.brand %></h3>
+        <h2><%= @watch.model %></h2>
+      </div>
+      <div class="card-watch-details">
+        <h3><%= number_with_delimiter(@watch.price, :delimiter => ',')%>€/day</h3>
+        <h2>Total: <%= number_with_delimiter(@watch_price, :delimiter => ',')%>€</h2>
+      </div>
+    </div>
+  </div>
+
+  <div><p>We have sent your order to <%=@user.first_name%></p>
+    <p>After the confirmation we will send you an email for the payment<p>
+  </div>
+</div>

@@ -11,8 +11,8 @@
         <%= @watch.description %></p>
       </div>
       <div class="card-watch-details">
-        <h2><%= number_with_delimiter(@watch.price, :delimiter => ',')%>€</h2>
-        <p>Owner:<%= @user.first_name%></p>
+        <h3><%= number_with_delimiter(@watch.price, :delimiter => ',')%>€/day</h3>
+        <h2>Owner:<%= @user.first_name%></h2>
       </div>
     </div>
   </div>
