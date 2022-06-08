@@ -18,6 +18,8 @@ class WatchesController < ApplicationController
   end
 
   def update
+    @watch.update(watch_params)
+    redirect_to watch_path(@watch)
   end
 
   def create

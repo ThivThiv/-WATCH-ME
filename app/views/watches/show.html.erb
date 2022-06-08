@@ -36,6 +36,8 @@
 
 <div>
   <% if policy(@watch).update? %>
-    <%= link_to "Edit watch", edit_watch_path(@watch) %>
+    <%= link_to edit_watch_path(@watch) do %>
+      <i class="fa-solid fa-pen"></i>
+    <% end %>
   <% end %>
 </div>
