@@ -56,7 +56,7 @@
 // Importé depuis l'UI KIT du Wagon
 .card-product h2 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 100px;
   margin: 0;
 }
 
@@ -142,8 +142,12 @@
 
 .card-watch h2 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 100px;
   margin: 0;
+}
+
+.card-watch h3 {
+  font-weight: bold;
 }
 
 .card-watch p {
@@ -159,4 +163,9 @@
   .card-watch > img {
     height: 120px;
   }
+}
+
+.cards a {
+  text-decoration: none;
+  color: black;
 }
