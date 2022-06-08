@@ -76,6 +76,7 @@
 // Cards show/watch (Sam)
 
 .card-watch {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -83,7 +84,6 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 18px;
-
 }
 .card-watch-button {
   display: flex;
@@ -136,14 +136,8 @@
   opacity: .7;
 }
 
-.delete-watch {
-align-items: center;
-padding: 16px;
-}
-
-.edit-watch {
-align-items: center;
-padding: 16px;
+.card-form {
+  padding: 16px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
