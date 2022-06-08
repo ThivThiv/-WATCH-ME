@@ -65,10 +65,70 @@
   align-items: center;
   width: 100%;
 }
-  
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Cards show/watch (Sam)
+
+.card-watch {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 18px;
+}
+
+.card-watch-infos-details {
+  justify-content: space-between;
+  display: flex;
+  margin: 10px;
+  }
+
+.card-watch-infos {
+  flex-direction: column;
+  display: flex;
+  /* flex: 0 0 50%; */
+  justify-content: left;
+}
+
+.card-watch-infos p {
+ margin-top: 18px;
+}
+
+.card-watch-details {
+  flex-direction: column;
+  display: flex;
+  text-align: right;
+  /* flex: 0 0 50%; */
+  // justify-content: flex-end;
+}
+
+.card-watch > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-watch h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-watch p {
+  font-size: 12px;
+  opacity: .7;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .card-watch > img {
+    height: 120px;
   }
 }
