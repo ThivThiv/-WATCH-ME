@@ -1,16 +1,25 @@
 class WatchesController < ApplicationController
+  before_action :set_watch, only: [:show, :destroy, :update, :edit]
+
   def index
-    @watches = Watch.all
+    @watches = policy_scope(Watch).order(created_at: :desc)
   end
 
   def show
-    @watch = Watch.find(params[:id])
     @user = User.find(@watch.user_id)
     @booking = Booking.new
   end
 
   def new
     @watch = Watch.new
+  end
+
+  def edit
+  end
+
+  def update
+    @watch.update(watch_params)
+    redirect_to watch_path(@watch)
   end
 
   def create
@@ -21,15 +30,20 @@ class WatchesController < ApplicationController
     else
       render :new
     end
+    authorize @watch
   end
 
   def destroy
-    @watch = Watch.find(params[:id])
     @watch.destroy
     redirect_to watches_path
   end
 
   private
+
+  def set_watch
+    @watch = Watch.find(params[:id])
+    authorize @watch
+  end
 
   def watch_params
     params.require(:watch).permit(:brand, :model, :description, :price, :photo)
