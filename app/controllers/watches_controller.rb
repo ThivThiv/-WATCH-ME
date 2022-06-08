@@ -40,6 +40,7 @@ class WatchesController < ApplicationController
   end
 
   def destroy
+    @watch.bookings.destroy
     @watch.destroy
     redirect_to watches_path
   end
