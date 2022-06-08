@@ -17,22 +17,20 @@
     </div>
   </div>
 </div>
-<div class="card-watch">
-<div>
+<div class="card-watch-button">
+
+<div class=delete-watch>
+  <% if policy(@watch).update? %>
+    <%= link_to "Edit", edit_watch_path(@watch), class:"btn btn-secondary"%>
+  <% end %>
+</div>
+<div class=edit-watch>
   <% if policy(@watch).destroy? %>
-    <%= link_to watch_path(@watch), method: :delete, data: { confirm: "Are you sure ?"} do %>
-      <i class="fa-regular fa-trash-can"></i>
-    <% end %>
+    <%= link_to "Delete", watch_path(@watch), class:"btn btn-danger", method: :delete, data: { confirm: "Are you sure ?"}%>
   <% end %>
 </div>
 
-<div>
-  <% if policy(@watch).update? %>
-    <%= link_to edit_watch_path(@watch) do %>
-      <i class="fa-solid fa-pen"></i>
-    <% end %>
-  <% end %>
-</div>
+
 
 </div>
 
