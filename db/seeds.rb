@@ -12,30 +12,30 @@ Booking.destroy_all
 
 puts 'Creating new watch database...'
 
-user1 = User.create(first_name: "titi", last_name: "toto", email: "titi@gmail.com", password: "password", admin: true)
+# user1 = User.create(first_name: "titi", last_name: "toto", email: "titi@gmail.com", password: "password", admin: true)
 
-Watch.create(
-  brand: "Rolex",
-  model: "Daytona Or",
-  description: "Montre en or qui claque sa mère",
-  price: 500,
-  user: user1
-)
+# Watch.create(
+#   brand: "Rolex",
+#   model: "Daytona Or",
+#   description: "Montre en or qui claque sa mère",
+#   price: 500,
+#   user: user1
+# )
 
-Watch.create(
-  brand: "Omega",
-  model: "Seamaster",
-  description: "La marque de James Bond",
-  price: 300,
-  user: user1
-)
+# Watch.create(
+#   brand: "Omega",
+#   model: "Seamaster",
+#   description: "La marque de James Bond",
+#   price: 300,
+#   user: user1
+# )
 
-Watch.create(
-  brand: "Patek Philippe",
-  model: "Nautilus",
-  description: "Tu achètes cette montre, tu mangeras que de l'eau",
-  price: 500,
-  user: user1
-)
+# Watch.create(
+#   brand: "Patek Philippe",
+#   model: "Nautilus",
+#   description: "Tu achètes cette montre, tu mangeras que de l'eau",
+#   price: 500,
+#   user: user1
+# )
 
 puts 'New database created!'
