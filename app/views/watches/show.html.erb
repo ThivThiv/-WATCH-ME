@@ -12,23 +12,12 @@
       <%= @watch.description %></p>
     </div>
     <div class="card-watch-details">
-      <h2><%= number_with_delimiter(@watch.price, :delimiter => ',') %> €</h2>
-      <p>Owner: <%= @user.first_name%></p>
+      <h2><%= number_with_delimiter(@watch.price, :delimiter => ',')%>€</h2>
+      <p>Owner:<%= @user.first_name%></p>
     </div>
   </div>
-
 </div>
 <div class="card-watch">
-  <div class="form-wrapper" style="width: 400px; margin: 10 auto;">
-    <%= simple_form_for [@watch, @booking] do |f| %>
-      <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
-      <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
-      <%= f.button :submit, "Rent a watch", class: "btn btn-primary" %>
-    <% end %>
-    </div>
-  </div>
-</div>
-
 <div>
   <% if policy(@watch).destroy? %>
     <%= link_to watch_path(@watch), method: :delete, data: { confirm: "Are you sure ?"} do %>
@@ -43,4 +32,23 @@
       <i class="fa-solid fa-pen"></i>
     <% end %>
   <% end %>
+</div>
+
+</div>
+
+<div class="card-watch">
+
+<div class="card-watch">
+  <div class="form-wrapper" style="width: 400px; margin: 10 auto;">
+    <%= simple_form_for [@watch, @booking] do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
+      <%= f.button :submit, "Rent a watch", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
+
 </div>
