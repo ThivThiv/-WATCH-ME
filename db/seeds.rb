@@ -12,7 +12,7 @@ Booking.destroy_all
 
 puts 'Creating new watch database...'
 
-user1 = User.create(first_name: "titi", last_name: "toto", email: "titi@gmail.com", password: "password")
+user1 = User.create(first_name: "titi", last_name: "toto", email: "titi@gmail.com", password: "password", admin: true)
 
 Watch.create(
   brand: "Rolex",

@@ -25,3 +25,17 @@
     <% end %>
   </div>
 </div>
+
+<div>
+  <% if policy(@watch).destroy? %>
+    <%= link_to watch_path(@watch), method: :delete, data: { confirm: "Are you sure ?"} do %>
+      <i class="fa-regular fa-trash-can"></i>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+  <% if policy(@watch).update? %>
+    <%= link_to "Edit watch", edit_watch_path(@watch) %>
+  <% end %>
+</div>
