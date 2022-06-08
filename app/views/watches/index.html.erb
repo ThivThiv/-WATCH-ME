@@ -2,11 +2,11 @@
   <div class="container">
     <h1>Rent luxurious watch</strong>!</h1>
     <p>and live the Dream life</p>
-    <a class="btn btn-light" href="#">Watch me</a>
+    <a class="btn btn-light" href="#cards">Watch me</a>
   </div>
 </div>
 
-<div class="cards">
+<div class="cards" id="cards">
     <% @watches.each do |watch| %>
       <%= link_to watch_path(watch), :action => 'go' do %>
       <div class="card-trip">

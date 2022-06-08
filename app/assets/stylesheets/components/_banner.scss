@@ -1,7 +1,11 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 280px 0;
+  padding: 0 8vmin;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .banner h1 {
@@ -20,7 +24,4 @@
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
-  .banner {
-    padding: 150px;
-  }
 }
