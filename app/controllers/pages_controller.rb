@@ -6,7 +6,6 @@ class PagesController < ApplicationController
 
   def my_watches
     @user = current_user
-    @watches = @user.watches
-    @my_watches = Watch.all
+    @my_watches = @user.watches
   end
 end
