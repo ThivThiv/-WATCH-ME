@@ -11,7 +11,7 @@ class WatchesController < ApplicationController
       }
     end
     if params[:query].present?
-      @watches = Watch.search_by_brand_and_model(params[:query])
+      @watches = Watch.search_by_brand_and_model_and_color_and_tag(params[:query])
     else
       @watches = Watch.all
     end

@@ -7,7 +7,7 @@ const recommendedPrice = () => {
     const hello = event.target.value
     console.log(hello)
     console.log(displayForm)
-    displayForm.value = hello * 0.01
+    displayForm.value = Math.floor(hello * 0.009765544876) // Algorithm de fou
   })
 }
 
