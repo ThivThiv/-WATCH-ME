@@ -1,31 +1,39 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky">
-  <div class="container-fluid">
-    <div class="shit"></div>
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo-wm.png" %>
+<div class="navbar sticky">
+  <div class="navbar-buttons">
+    <%= link_to root_path, :action => 'go' do %>
+      <div class="nav-btn
+      <% if current_page?("/") && controller.controller_name == "watches" %> active <% end %>">
+        <div class="nav-btn-img">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="nav-btn-title">
+          <p>Search</p>
+        </div>
+      </div>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%= link_to my_watches_path, :action => 'go' do %>
+      <div class="nav-btn
+      <% if current_page?("/my-watches") && controller.controller_name == "pages" %> active <% end %>">
+        <div class="nav-btn-img" id="svg">
+         <i class="fa-solid fa-clock"></i>
+        </div>
+        <div class="nav-btn-title">
+          <p>Watches</p>
+        </div>
+      </div>
+    <% end %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", class: "avatar dropdown-toggle user-pp", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Add a watch", new_watch_path, class: "dropdown-item" %>
-              <%= link_to "My watches", my_watches_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <%= link_to new_watch_path, :action => 'go' do %>
+      <div class="nav-btn
+      <% if current_page?("/watches/new") && controller.controller_name == "watches" %> active <% end %>">
+        <div class="nav-btn-img">
+          <i class="fa-solid fa-circle-plus"></i>
+        </div>
+        <div class="nav-btn-title">
+          <p>Add</p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -15,9 +15,12 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import { recommendedPrice } from "../plugins/recommended";
+
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initFlatpickr();
+  recommendedPrice();
 });

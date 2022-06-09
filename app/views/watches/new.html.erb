@@ -8,10 +8,10 @@
       <%= f.input :brand %>
       <%= f.input :model %>
       <%= f.input :description %>
-      <%= f.input :address, label: "address", input_html:{id: "address"} %>
+      <%= f.input :address, label: "City", input_html:{id: "address"} %>
       <%= f.input :tag, collection: $TAGS, as: :check_boxes, label: "Best for:" %>
       <%= f.input :color, collection: $COLORS, label: "Predominant Colour" %>
-      <%= f.input :price_new, label: "Watch New Price" %>
+      <%= f.input :price_new, label: "My watch worth new:" %>
       <%= f.input :price, label: "RRPD (Recommended Renting Price per Day)"%>
       <%= f.input :photo, as: :file %>
       <%= f.button :submit, class: "btn btn-primary" %>

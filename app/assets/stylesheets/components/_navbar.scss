@@ -1,23 +1,94 @@
+.navbar {
+  height: 60px;
+  background-color: white;
+  padding: 0px !important;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.188);
+}
+
+.sticky {
+  position: fixed !important;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav-btn {
+  text-align: center;
+
+  &.active {
+    font-weight: bold;
+    i {
+      color: rgb(71, 31, 193);
+    }
+    p {
+      color: rgb(71, 31, 193);
+    }
+  }
+}
+
+
+.navbar-buttons {
+  height: 44px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
+}
+.nav-btn-title p {
+  margin: 0;
+  color: rgb(50, 50, 50);
+  font-size: 12px;
+}
+
+.nav-btn-img {
+  color: rgb(50, 50, 50);
+  font-size: 24px;
+}
+
+#svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  min-height: 36px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(0, 0, 0);
+  background: white;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.188);
+  position: sticky!important;
+  top: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-brand img {
-  width: 40px;
-  justify-content: center;
-  object-fit: cover;
-}
-
-.shit {
+.navbar-lewagon .navbar-brand img {
   width: 40px;
 }
 
-.sticky {
-  position: sticky !important;
-  top: 0;
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.log {
+  li {
+    padding: 0px;
+  }
+}
+.dropdown-item {
+    text-decoration: none;
+    color: black;
 }
