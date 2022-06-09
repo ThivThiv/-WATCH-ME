@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 15px;
 }
 
 .cards a {
@@ -55,8 +56,19 @@
   text-align: center;
 }
 
+.card-trip .card-trip-infos p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 @media (min-width: 100px) and (max-width: 575px) {
   .card-trip > img {
     height: 120px;
   }
+}
+
+.card-watch-trip {
+  text-align: center;
+  padding: 25px;
 }
