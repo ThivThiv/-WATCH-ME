@@ -10,12 +10,6 @@ class WatchesController < ApplicationController
         lng: watch.longitude
       }
     end
-    # @markers = @flats.geocoded.map do |flat|
-    #   {
-    #     lat: flat.latitude,
-    #     lng: flat.longitude
-    #   }
-    # end
     if params[:query].present?
       @watches = Watch.search_by_brand_and_model(params[:query])
     else
@@ -25,6 +19,7 @@ class WatchesController < ApplicationController
   end
 
   def show
+    @marker = { lat: @watch.latitude, lng: @watch.longitude }
     @user = User.find(@watch.user_id)
     @booking = Booking.new
   end
@@ -66,6 +61,6 @@ class WatchesController < ApplicationController
   end
 
   def watch_params
-    params.require(:watch).permit(:brand, :model, :description, :price, :photo)
+    params.require(:watch).permit(:brand, :model, :description, :price, :photo, :address)
   end
 end
