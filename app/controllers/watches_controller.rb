@@ -3,10 +3,10 @@ class WatchesController < ApplicationController
 
   def index
     @watches = policy_scope(Watch).order(created_at: :desc)
-    @markers = @flats.geocoded.map do |flat|
+    @markers = @watches.geocoded.map do |watch|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: watch.latitude,
+        lng: watch.longitude
       }
     end
   end
