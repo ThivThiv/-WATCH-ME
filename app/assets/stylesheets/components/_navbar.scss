@@ -54,3 +54,31 @@
   margin: 0px;
   min-height: 36px;
 }
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.188);
+  position: sticky!important;
+  top: 0;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+}
