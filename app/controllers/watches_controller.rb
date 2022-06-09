@@ -1,8 +1,20 @@
 class WatchesController < ApplicationController
   before_action :set_watch, only: [:show, :destroy, :update, :edit]
-
+  $COLORS = ["Red", "Yellow", "Blue", "Orange", "Green", "Violet"]
+  $TAGS = ["The Big Day", "Conferences", "Getaway", "Date Night", "Job Interview", "Adventure", "Everyday"]
   def index
     @watches = policy_scope(Watch).order(created_at: :desc)
+    @markers = @watches.geocoded.map do |watch|
+      {
+        lat: watch.latitude,
+        lng: watch.longitude
+      }
+    end
+    if params[:query].present?
+      @watches = Watch.search_by_brand_and_model(params[:query])
+    else
+      @watches = Watch.all
+    end
 
   end
 
