@@ -18,3 +18,18 @@
     <% end %>
   </div>
 </div>
+
+
+<div class="container" style="padding: 30px">
+
+  <div data-controller="insert-in-list">
+  <div data-insert-in-list-target="items">
+
+  </div>
+  <%= simple_form_for([@watch],
+                      data: { insert_in_list_target: "form" }) do |f| %>
+
+  <% end %>
+
+  </div>
+</div>
