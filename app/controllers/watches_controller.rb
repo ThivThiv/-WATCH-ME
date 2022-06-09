@@ -15,6 +15,12 @@ class WatchesController < ApplicationController
     #     lng: flat.longitude
     #   }
     # end
+    if params[:query].present?
+      @watches = Watch.search_by_brand_and_model(params[:query])
+    else
+      @watches = Watch.all
+    end
+
   end
 
   def show
