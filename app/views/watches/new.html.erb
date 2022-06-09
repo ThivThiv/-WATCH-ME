@@ -8,10 +8,10 @@
       <%= f.input :brand %>
       <%= f.input :model %>
       <%= f.input :description %>
-      <%= f.input :address, label: "address", input_html:{id: "address"} %>
+      <%= f.input :address, label: "City", input_html:{id: "address"} %>
       <%= f.input :tag, collection: $TAGS, as: :check_boxes, label: "Best for:" %>
       <%= f.input :color, collection: $COLORS, label: "Predominant Colour" %>
-      <%= f.input :price_new, label: "Watch New Price" %>
+      <%= f.input :price_new, label: "My watch worth new:" %>
       <%= f.input :price, label: "RRPD (Recommended Renting Price per Day)"%>
       <%= f.input :photo, as: :file %>
       <%= f.button :submit, class: "btn btn-primary" %>
@@ -19,17 +19,17 @@
   </div>
 </div>
 
-
+<%#
 <div class="container" style="padding: 30px">
 
   <div data-controller="insert-in-list">
   <div data-insert-in-list-target="items">
 
   </div>
-  <%= simple_form_for([@watch],
-                      data: { insert_in_list_target: "form" }) do |f| %>
+  <%= simple_form_for(@watch),
+                      data: { insert_in_list_target: "form" } do |f| %>
 
-  <% end %>
+  <%# <% end %> %>
 
-  </div>
-</div>
+  <%# </div>
+</div> %> %>
