@@ -24,14 +24,14 @@
       </div>
     <% end %>
 
-    <%= link_to "#", :action => 'go' do %>
+    <%= link_to new_watch_path, :action => 'go' do %>
       <div class="nav-btn
-      <% if current_page?("/user") && controller.controller_name == "watches" %> active <% end %>">
+      <% if current_page?("/watches/new") && controller.controller_name == "watches" %> active <% end %>">
         <div class="nav-btn-img">
-          <i class="fa-solid fa-circle-user"></i>
+          <i class="fa-solid fa-circle-plus"></i>
         </div>
         <div class="nav-btn-title">
-          <p>User</p>
+          <p>Add</p>
         </div>
       </div>
     <% end %>
