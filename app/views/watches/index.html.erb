@@ -14,8 +14,18 @@
         </div>
       </div>
     <% end %>
-    <div>
-      <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+    <div class="log">
+      <% if user_signed_in? %>
+        <div class="">
+          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link blacktext" do %>
+            <%= image_tag "avatar.webp", class: "avatar" %>
+          <% end %>
+        </div>
+      <% else %>
+        <li class="nav-link">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </div>
   </div>
 </div>
