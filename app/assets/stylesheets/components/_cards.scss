@@ -20,15 +20,30 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-item {
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
+}
+
 // Importé depuis l'UI KIT du Wagon
 .card-product {
   overflow: hidden;
   height: 120px;
   margin-top: 20px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+
+  &:hover {
+    box-shadow: 2px 2px 15px rgba($color: black, $alpha: 0.2);
+    transition: 0.3s;
+  }
 }
 
 // Importé depuis l'UI KIT du Wagon
@@ -41,7 +56,7 @@
 // Importé depuis l'UI KIT du Wagon
 .card-product h2 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 100px;
   margin: 0;
 }
 
@@ -76,6 +91,7 @@
 // Cards show/watch (Sam)
 
 .card-watch {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -84,7 +100,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 18px;
 }
-
+.card-watch-button {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 18px;
+  justify-content: space-between;
+}
 .card-watch-infos-details {
   justify-content: space-between;
   display: flex;
@@ -118,8 +142,12 @@
 
 .card-watch h2 {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 100px;
   margin: 0;
+}
+
+.card-watch h3 {
+  font-weight: bold;
 }
 
 .card-watch p {
@@ -127,8 +155,17 @@
   opacity: .7;
 }
 
+.card-form {
+  padding: 16px;
+}
+
 @media (min-width: 100px) and (max-width: 575px) {
   .card-watch > img {
     height: 120px;
   }
+}
+
+.cards a {
+  text-decoration: none;
+  color: black;
 }

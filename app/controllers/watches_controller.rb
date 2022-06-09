@@ -9,6 +9,12 @@ class WatchesController < ApplicationController
         lng: watch.longitude
       }
     end
+    # @markers = @flats.geocoded.map do |flat|
+    #   {
+    #     lat: flat.latitude,
+    #     lng: flat.longitude
+    #   }
+    # end
   end
 
   def show
@@ -40,6 +46,7 @@ class WatchesController < ApplicationController
   end
 
   def destroy
+    @watch.bookings.destroy
     @watch.destroy
     redirect_to watches_path
   end

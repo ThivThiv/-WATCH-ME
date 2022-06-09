@@ -4,6 +4,11 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @watch = Watch.find(@booking.watch_id)
+    @user = User.find(@booking.user_id)
+    @watch_price = total_booking
+    authorize @booking
+
   end
 
   def create
@@ -14,8 +19,15 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to watch_booking_path(@watch, @booking)
     else
-      render :new
+      render :show
     end
+    authorize @booking
+  end
+
+  def total_booking
+    @watch = Watch.find(@booking.watch_id)
+    @number_of_days = (@booking.end_date) - (@booking.start_date)
+    @total_price = (@watch.price * @number_of_days).to_i
   end
 
   private
