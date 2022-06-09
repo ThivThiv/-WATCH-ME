@@ -9,6 +9,7 @@
       <%= f.input :model %>
       <%= f.input :description %>
       <%= f.input :price %>
+      <%= f.input :address, label: "address", input_html:{id: "address"} %>
       <%= f.input :photo, as: :file %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>

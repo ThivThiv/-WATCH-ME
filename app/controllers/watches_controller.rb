@@ -3,21 +3,11 @@ class WatchesController < ApplicationController
 
   def index
     @watches = policy_scope(Watch).order(created_at: :desc)
-    @markers = @watches.geocoded.map do |watch|
-      {
-        lat: watch.latitude,
-        lng: watch.longitude
-      }
-    end
-    # @markers = @flats.geocoded.map do |flat|
-    #   {
-    #     lat: flat.latitude,
-    #     lng: flat.longitude
-    #   }
-    # end
+
   end
 
   def show
+    @marker = { lat: @watch.latitude, lng: @watch.longitude }
     @user = User.find(@watch.user_id)
     @booking = Booking.new
   end
@@ -59,6 +49,6 @@ class WatchesController < ApplicationController
   end
 
   def watch_params
-    params.require(:watch).permit(:brand, :model, :description, :price, :photo)
+    params.require(:watch).permit(:brand, :model, :description, :price, :photo, :address)
   end
 end
