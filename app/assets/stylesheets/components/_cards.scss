@@ -91,6 +91,11 @@
 
 // Cards show/watch (Sam)
 
+#card-watch-product {
+  border-radius: 0px;
+  margin-top: 0px;
+}
+
 .card-watch {
   margin-top: 20px;
   display: flex;
@@ -100,6 +105,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 18px;
+  border-radius: 8px;
 }
 .card-watch-button {
   display: flex;
@@ -109,7 +115,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 18px;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 
