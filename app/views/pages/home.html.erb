@@ -1,0 +1,58 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" data-controller="hide-search" data-action="scroll@window->hide-search#hideScroll">
+  <div class="container-fluid search">
+    <%= form_tag watches_path, method: :get do %>
+      <div class="search-bar">
+        <div style="margin-right: 4px">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a watch"
+          %>
+        </div>
+        <div>
+          <%= submit_tag "Search", class: "btn btn-dark btn-search" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="log">
+      <% if user_signed_in? %>
+        <div class="">
+        <%#class: "avatar" Sam remove class avatar%>
+          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link blacktext" do %>
+            <%= image_tag "logo-black", class: "avatar"%>
+          <% end %>
+        </div>
+      <% else %>
+        <li class="nav-link">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1610010778144-6ef823d799a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+  <div class="container">
+    <h1>Rent luxurious watch</strong>!</h1>
+    <p>and live the Dream life</p>
+    <a class="btn btn-light" href="#cards">Watch me</a>
+  </div>
+</div>
+
+<div class="cards" id="cards">
+    <% @watches.each do |watch| %>
+      <%= link_to watch_path(watch), :action => 'go' do %>
+      <div class="card-trip">
+      <img src='<%= watch.photo.attached? ? cl_image_path(watch.photo.key, crop: :fill) : image_path("https://m.media-amazon.com/images/I/81lHQGmXtIL._AC_UL1500_.jpg", width: 400, height: 300, crop: :fill) %>' />
+      <div class="card-trip-infos">
+        <h2><%= watch.brand.upcase %></h2>
+        <h3><%= watch.model %></h3>
+        <br>
+        <% watch.average_rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      </div>
+      </div>
+      <% end %>
+    <% end %>
+</div>
