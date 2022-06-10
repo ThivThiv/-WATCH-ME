@@ -39,6 +39,7 @@
   </div>
 </div>
 
+
 <div class="cards" id="cards">
     <% @watches.each do |watch| %>
       <%= link_to watch_path(watch), :action => 'go' do %>
@@ -48,8 +49,13 @@
         <h2><%= watch.brand.upcase %></h2>
         <h3><%= watch.model %></h3>
         <br>
-        <% watch.average_rating.times do %>
-          <i class="fas fa-star"></i>
+        <p>Avg. Rating:</p>
+        <% if watch.average_rating != 0 %>
+          <% watch.average_rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+        <% else %>
+          <p>No ratings</p>
         <% end %>
       </div>
       </div>
