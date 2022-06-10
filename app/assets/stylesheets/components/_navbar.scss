@@ -13,14 +13,17 @@
 
 .nav-btn {
   text-align: center;
+  p, i {
+    color: lightgray;
+  }
 
   &.active {
     font-weight: bold;
     i {
-      color: rgb(71, 31, 193);
+      color: $red;
     }
     p {
-      color: rgb(71, 31, 193);
+      color: $red;
     }
   }
 }
