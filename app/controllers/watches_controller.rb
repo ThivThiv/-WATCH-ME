@@ -2,6 +2,7 @@ class WatchesController < ApplicationController
   before_action :set_watch, only: [:show, :destroy, :update, :edit]
   $COLORS = ["Red", "Yellow", "Blue", "Orange", "Green", "Violet"]
   $TAGS = ["The Big Day", "Conferences", "Getaway", "Date Night", "Job Interview", "Adventure", "Everyday"]
+
   def index
     @watches = policy_scope(Watch).order(created_at: :desc)
     @markers = @watches.geocoded.map do |watch|
@@ -15,15 +16,14 @@ class WatchesController < ApplicationController
     else
       @watches = Watch.all
     end
-
   end
 
   def show
     @marker = { lat: @watch.latitude, lng: @watch.longitude }
     @user = User.find(@watch.user_id)
     @booking = Booking.new
-    @review = Review.new
-    @average_rating = @reviews.average(:rating)
+    # @review = Review.new
+    # @average_rating = @reviews.average(:rating)
   end
 
   def new
