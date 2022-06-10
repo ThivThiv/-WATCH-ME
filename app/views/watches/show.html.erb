@@ -3,7 +3,7 @@
     <div class="product">
       <div class="card-watch">
         <div class="card-watch-trip">
-          <%= @watch.photo.attached? ? cl_image_tag(@watch.photo.key, height: 480, width: 390, crop: :fill) : image_path("https://picsum.photos/390/480", width: 390, height: 480, crop: :fill)%>
+          <%= @watch.photo.attached? ? cl_image_tag(@watch.photo.key, height: 480, width: 390, crop: :fill) : image_tag("https://m.media-amazon.com/images/I/81lHQGmXtIL._AC_UL1500_.jpg", width: 390, height: 480, crop: :fill)%>
         </div>
         <div class= "card-watch-infos-details">
           <div class="card-watch-infos">
