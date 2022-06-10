@@ -62,6 +62,6 @@ class WatchesController < ApplicationController
   end
 
   def watch_params
-    params.require(:watch).permit(:brand, :model, :description, :price, :photo, :address, :color)
+    params.require(:watch).permit(:brand, :model, :description, :price, :photo, :address, :color, :tag)
   end
 end
