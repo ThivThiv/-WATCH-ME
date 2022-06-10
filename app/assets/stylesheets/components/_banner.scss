@@ -3,13 +3,12 @@
   background-position: center;
   padding: 0 8vmin;
   display: flex;
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
 }
 
 .banner h1 {
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
@@ -22,6 +21,12 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.cta {
+    bottom: 189px;
+    position: relative;
+}
+
 
 @media (min-width: 100px) and (max-width: 575px) {
 }
