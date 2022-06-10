@@ -17,8 +17,9 @@
     <div class="log">
       <% if user_signed_in? %>
         <div class="">
+        <%#class: "avatar" Sam remove class avatar%>
           <%= link_to destroy_user_session_path, method: :delete, class: "nav-link blacktext" do %>
-            <%= image_tag "avatar.webp", class: "avatar" %>
+            <%= image_tag "logo-black", class: "avatar"%>
           <% end %>
         </div>
       <% else %>
@@ -47,7 +48,7 @@
         <h2><%= watch.brand.upcase %></h2>
         <h3><%= watch.model %></h3>
         <br>
-        <%= watch.average_rating.to_i.times do %>
+        <% watch.average_rating.to_i.times do %>
           <i class="fa-solid fa-star"></i>
         <% end %>
       </div>
