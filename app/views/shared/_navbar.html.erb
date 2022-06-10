@@ -2,7 +2,7 @@
   <div class="navbar-buttons">
     <%= link_to root_path, :action => 'go' do %>
       <div class="nav-btn
-      <% if current_page?("/") && controller.controller_name == "watches" %> active <% end %>">
+      <% if (current_page?("/") || current_page?("/watches")) && (controller.controller_name == "watches" || controller.controller_name == "pages") %> active <% end %>">
         <div class="nav-btn-img">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
