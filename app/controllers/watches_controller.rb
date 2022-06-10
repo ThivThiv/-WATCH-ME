@@ -22,8 +22,7 @@ class WatchesController < ApplicationController
     @marker = { lat: @watch.latitude, lng: @watch.longitude }
     @user = User.find(@watch.user_id)
     @booking = Booking.new
-    # @review = Review.new
-    # @average_rating = @reviews.average(:rating)
+    @review = Review.new
   end
 
   def new

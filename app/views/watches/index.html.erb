@@ -47,8 +47,8 @@
         <h2><%= watch.brand.upcase %></h2>
         <h3><%= watch.model %></h3>
         <br>
-        <%= watch.average_rating.to_i.times do %>
-          <i class="fa-solid fa-star"></i>
+        <% watch.average_rating.times do %>
+          <i class="fas fa-star"></i>
         <% end %>
       </div>
       </div>
