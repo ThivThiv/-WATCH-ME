@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, :configure_permitted_parameters, if: :devise_controller?, only: [:my_watches]
   include Pundit
   # Pundit: white-list approach.
   after_action :verify_authorized, except: [:index, :show, :new], unless: :skip_pundit?
