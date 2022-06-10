@@ -14,7 +14,6 @@ export default class extends Controller {
 
   connect() {
     this.prevScrollpos = window.pageYOffset;
-    console.log(this.prevScrollpos);
   }
 
   hideScroll() {
