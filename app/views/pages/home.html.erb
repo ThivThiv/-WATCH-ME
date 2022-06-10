@@ -41,7 +41,54 @@
   </div>
 </div>
 
+<div class="container home">
+  <h2>Our collections</h2>
+  <div class="parent">
+    <%= link_to "/watches?query=wedding&commit=Search", :action => 'go' do %>
+      <div class="collection div1">
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.simplitoo.fr/media/articles/preview_CxonRGN.jpeg)">
+      Wedding</div>
+      </div>
+    <% end %>
 
+    <div class="collection div2">
+      <%= link_to "/watches?query=getaway&commit=Search", :action => 'go' do %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bluebiz-media.azureedge.net/4a275e/contentassets/1269829892474a41807d281baafd36e2/holiday-beach-624x380.jpg)">
+      Getaway</div>
+      <% end %>
+    </div>
+
+    <div class="collection div3">
+      <%= link_to "/watches?query=date&commit=Search", :action => 'go' do %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bestlifeonline.com/wp-content/uploads/sites/3/2018/10/couple-kissing.jpg?quality=82&strip=all)">
+      Date</div>
+      <% end %>
+    </div>
+
+    <div class="collection div4">
+      <%= link_to "/watches?query=adventure&commit=Search", :action => 'go' do %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://data.tibettravel.org/assets/images/bhutan/bhutan-adventure-tour/trekking-in-bhutan.jpg)">
+      Adventure</div>
+      <% end %>
+    </div>
+
+    <div class="collection div5">
+      <%= link_to "/watches?query=everyday&commit=Search", :action => 'go' do %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.radiofrance.fr/s3/cruiser-production/2020/11/d3e0329a-5557-4395-8842-7180f9220e7e/1136_gettyimages-157308564.jpg)">
+      Every Day</div>
+      <% end %>
+    </div>
+
+    <div class="collection div6">
+      <%= link_to "/watches?query=business&commit=Search", :action => 'go' do %>
+        <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.agora-business.fr/wp-content/uploads/2019/01/business-3152586_960_720.jpg)">
+      Business</div>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <h2> All watches</h2>
+</div>
 <div class="cards" id="cards">
     <% @watches.each do |watch| %>
       <%= link_to watch_path(watch), :action => 'go' do %>
