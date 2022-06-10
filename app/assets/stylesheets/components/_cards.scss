@@ -228,6 +228,9 @@
   .div5 { grid-area: 3 / 1 / 4 / 2; }
   .div6 { grid-area: 3 / 2 / 4 / 3; }
 
-.div {
+.collection {
   margin: 8px;
+  a {
+    text-decoration: none!important;
+  }
 }
