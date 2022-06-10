@@ -1,9 +1,17 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1511370235399-1802cae1d32f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=855&q=80)">
-  <h1>Add a new watch</h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1618215650137-1b7c35401df3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80)">
+  <h1>Add a review</h1>
 </div>
 
-<%= simple_form_for [ @watch, @review ] do |f| %>
-  <%= f.input :rating, placeholder: "Your rate" %>
-  <%= f.input :content, placeholder: "Write your comment here" %>
-  <%= f.submit "Add a review" %>
-<% end %>
+<div class="container">
+  <div class='image-review d-flex justify-content-center'>
+    <%= @watch.photo.attached? ? cl_image_tag(@watch.photo.key, height: 280, width: 160, crop: :fill) : image_tag("https://m.media-amazon.com/images/I/81lHQGmXtIL._AC_UL1500_.jpg", width: 390, height: 480, crop: :fill)%>
+  </div>
+
+  <div class="form" >
+    <%= simple_form_for [ @watch, @review ] do |f| %>
+      <%= f.input :rating, placeholder: "Your rate" %>
+      <%= f.input :content, placeholder: "Write your comment here" %>
+      <%= f.submit "Add a review", class: "btn btn-search"%>
+    <% end %>
+  </div>
+</div>
