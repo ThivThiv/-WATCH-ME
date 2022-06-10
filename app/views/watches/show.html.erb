@@ -51,7 +51,18 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <div class="card-reviews">
-
+  <div class="container">
+    <div class="card-watch card-reviews">
+      <h4>Reviews</h4>
+      <% @watch.reviews.last(3).each do |review| %>
+        <div class="review" style="border-bottom: 1px solid rgba(0, 0, 0, .1); display: flex;"></div>
+          <p>Comment: <br><%= review.content %></p>
+          <p>Rating: <br><% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %> </p>
+      <% end %>
+    <%= link_to "Add a review", new_watch_review_path(@watch), class:"btn btn-warning"%>
+    </div>
   </div>
+
 </div>
