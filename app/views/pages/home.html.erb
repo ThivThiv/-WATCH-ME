@@ -44,12 +44,12 @@
 <div class="container home">
   <h2>Our collections</h2>
   <div class="parent">
-    <%= link_to "/watches?query=wedding&commit=Search", :action => 'go' do %>
-      <div class="collection div1">
+    <div class="collection div1">
+      <%= link_to "/watches?query=wedding&commit=Search", :action => 'go' do %>
         <div class="card-collection" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.simplitoo.fr/media/articles/preview_CxonRGN.jpeg)">
       Wedding</div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
 
     <div class="collection div2">
       <%= link_to "/watches?query=getaway&commit=Search", :action => 'go' do %>
