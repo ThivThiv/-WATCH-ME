@@ -1,56 +1,53 @@
-<div class="container">
-  <div class="card-show">
-    <div class="product">
-      <div class="card-watch">
-        <div class="card-watch-trip">
-          <%= @watch.photo.attached? ? cl_image_tag(@watch.photo.key, height: 480, width: 390, crop: :fill) : image_tag("https://m.media-amazon.com/images/I/81lHQGmXtIL._AC_UL1500_.jpg", width: 390, height: 480, crop: :fill)%>
-        </div>
-        <div class= "card-watch-infos-details">
-          <div class="card-watch-infos">
-            <h2><%= @watch.brand.upcase %></h2>
-            <h3><%= @watch.model %></h3>
-            <p>Description:
-            <%= @watch.description %></p>
-          </div>
-          <div class="card-watch-details">
-            <h3><%= number_with_delimiter(@watch.price, :delimiter => ',')%>€/day</h3>
-            <h2>Owner:<%= @user.first_name%></h2>
-          </div>
-        </div>
+<div class="card-show">
+  <div class="card-watch" id="card-watch-product">
+    <div class="card-watch-trip">
+      <%= @watch.photo.attached? ? cl_image_tag(@watch.photo.key, height: 480, width: 390, crop: :fill) : image_tag("https://m.media-amazon.com/images/I/81lHQGmXtIL._AC_UL1500_.jpg", width: 390, height: 480, crop: :fill)%>
+    </div>
+    <div class= "card-watch-infos-details">
+      <div class="card-watch-infos">
+        <h2><%= @watch.brand.upcase %></h2>
+        <h3><%= @watch.model %></h3>
+        <p>Description:
+        <%= @watch.description %></p>
       </div>
-        <% if @watch.user_id == current_user.id %>
-          <div class="card-watch-button">
-            <div class=delete-watch>
-              <% if policy(@watch).update? %>
-                <%= link_to "Edit", edit_watch_path(@watch), class:"btn btn-secondary"%>
-              <% end %>
-            </div>
-            <p>Manage <%=@watch.brand.upcase%></p>
-            <div class=edit-watch>
-              <% if policy(@watch).destroy? %>
-                <%= link_to "Delete", watch_path(@watch), class:"btn btn-danger", method: :delete, data: { confirm: "Are you sure ?"}%>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+      <div class="card-watch-details">
+        <h3><%= number_with_delimiter(@watch.price, :delimiter => ',')%>€/day</h3>
+        <h2>Owner:<%= @user.first_name%></h2>
+      </div>
     </div>
   </div>
 
-
-      <div class="card-watch card-form">
-        <div class="form-wrapper" style="margin: 10 auto;">
-          <%= simple_form_for [@watch, @booking] do |f| %>
-            <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
-            <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
-            <%= f.button :submit, "Rent a watch", class: "btn btn-primary" %>
+  <div class="container">
+    <% if @watch.user_id == current_user.id %>
+      <div class="card-watch-button">
+        <div class=delete-watch>
+          <% if policy(@watch).update? %>
+            <%= link_to "Edit", edit_watch_path(@watch), class:"btn btn-secondary"%>
+          <% end %>
+        </div>
+        <p>Manage <%=@watch.brand.upcase%></p>
+        <div class=edit-watch>
+          <% if policy(@watch).destroy? %>
+            <%= link_to "Delete", watch_path(@watch), class:"btn btn-danger", method: :delete, data: { confirm: "Are you sure ?"}%>
           <% end %>
         </div>
       </div>
+    <% end %>
+
+    <div class="card-watch card-form">
+      <div class="form-wrapper" style="margin: 10 auto;">
+        <%= simple_form_for [@watch, @booking] do |f| %>
+          <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+          <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
+          <%= f.button :submit, "Rent a watch", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
-    <div class="map"
-      data-controller="mapbox"
-      data-mapbox-marker-value="<%= @marker.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+  </div>
+
+  <div class="map"
+    data-controller="mapbox"
+    data-mapbox-marker-value="<%= @marker.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
